@@ -1,0 +1,53 @@
+body{
+ margin:0;
+ font-family:Arial, sans-serif;
+ background:#fff8e8;
+ color:#222;
+}
+
+main{
+ min-height:100vh;
+}
+
+header{
+ padding:40px;
+ text-align:center;
+ background:#6c63ff;
+ color:white;
+}
+
+.hero{
+ margin:40px auto;
+ max-width:700px;
+ padding:40px;
+ background:white;
+ border-radius:24px;
+ box-shadow:0 10px 30px #0002;
+}
+
+button{
+ background:#6c63ff;
+ color:white;
+ border:0;
+ padding:15px 25px;
+ border-radius:20px;
+}
+
+.features{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+ gap:20px;
+ padding:40px;
+}
+
+article{
+ background:white;
+ padding:30px;
+ border-radius:20px;
+ text-align:center;
+}
+
+footer{
+ text-align:center;
+ padding:30px;
+}
