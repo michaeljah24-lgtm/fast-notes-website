@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
 import "./style.css";
+import appIcon from "./assets/app-icon.png";
+import appBanner from "./assets/app-banner.png";
 
 /* ── Scroll-reveal hook ── */
 function useReveal(threshold = 0.15) {
@@ -117,7 +119,7 @@ function App() {
       {/* NAV */}
       <nav className={`nav${scrolled ? " scrolled" : ""}`}>
         <div className="nav-logo">
-          <span className="nav-logo-dot" />
+          <img src={appIcon} alt="Fast Notes icon" className="nav-logo-icon" />
           Fast Notes
         </div>
         <div className="nav-links">
@@ -162,30 +164,10 @@ function App() {
 
           <div className="hero-visual">
             <div className="notes-scene">
-              <StickyNote
-                className="note-1"
-                title="Today's Goals"
-                body="Ship the landing page redesign ✓ Review Q3 plan with team ○"
-                tag="#work"
-              />
-              <StickyNote
-                className="note-2"
-                title="Recipe Idea"
-                body="Mango avocado salad — lime dressing, chili flakes, toasted seeds"
-                tag="#personal"
-              />
-              <StickyNote
-                className="note-3"
-                title="Meeting Notes"
-                body="Focus on onboarding flow. Users drop off at step 3. Need redesign ASAP."
-                tag="#ideas"
-              />
-              <StickyNote
-                className="note-4"
-                title="Read Later"
-                body="The Almanack of Naval Ravikant · Deep Work · SPQR"
-                tag="#reading"
-              />
+              <StickyNote className="note-1" title="Meeting Notes" body="Discuss Q3 roadmap with design team. Finalize launch timeline." tag="Work" />
+              <StickyNote className="note-2" title="Grocery List" body="Avocados, sourdough, oat milk, dark chocolate." tag="Personal" />
+              <StickyNote className="note-3" title="Book Ideas" body="Write about the morning routine that changed everything." tag="Creative" />
+              <StickyNote className="note-4" title="Workout" body="5km run, 3×12 push-ups, stretch 10 min." tag="Health" />
             </div>
           </div>
         </div>
@@ -217,6 +199,31 @@ function App() {
           {features.map((f, i) => (
             <FeatureCard key={f.title} {...f} delay={i * 80} />
           ))}
+        </div>
+      </section>
+
+      {/* APP PREVIEW */}
+      <section className="app-preview">
+        <div className="app-preview-inner">
+          <div className="app-preview-text">
+            <div className="section-label">See it in action</div>
+            <h2 className="section-h2">Beautiful by design,<br />powerful by default</h2>
+            <p className="app-preview-desc">
+              Fast Notes is crafted to feel natural from the first tap. A clean interface that stays out of the way so your ideas can flow freely.
+            </p>
+          </div>
+          <div className="app-preview-images">
+            <div className="app-preview-banner">
+              <img src={appBanner} alt="Fast Notes app preview" className="app-preview-img" />
+            </div>
+            <div className="app-preview-icon-card">
+              <img src={appIcon} alt="Fast Notes app icon" className="app-preview-icon" />
+              <div className="app-preview-icon-label">
+                <span className="app-preview-icon-name">Fast Notes</span>
+                <span className="app-preview-icon-sub">Rated 4.9 ★ on App Store</span>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
